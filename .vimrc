@@ -1,7 +1,7 @@
 set number
 set ruler
 set cursorline
-set noautoindent
+set smartindent
 
 set runtimepath+=/.vim
 
@@ -15,8 +15,10 @@ set showmode
 set showcmd
 
 filetype indent on
+set expandtab  
 set tabstop=4
 set shiftwidth=4
+set encoding=utf-8
 
 set hlsearch
 set showmatch
@@ -28,7 +30,11 @@ set autoread
 set noerrorbells
 set clipboard=unnamed
 set laststatus=2
-set statusline=%F%m%r%h%w%=\ [ft=%Y]\ %{\"[fenc=\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\"+\":\"\").\"]\"}\ [ff=%{&ff}]\ [asc=%03.3b]\ [hex=%02.2B]\ [pos=%04l,%04v][%p%%]\ [len=%L]
+set statusline=%#filepath#%F%m%r%h%w%=\ %#filetype#%{\"fenc=\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\"+\":\"\").\"\"}\ %#position#[pos=%l,%v][%p%%]\ %#length#len=%L
+hi filepath cterm=none ctermfg=232 ctermbg=247
+hi filetype cterm=none ctermfg=233 ctermbg=244 
+hi position cterm=none ctermfg=234 ctermbg=241 
+hi length cterm=none ctermfg=0 ctermbg=238 
 
 "set nocompatible              " be iMproved, required
 "filetype off                  " required
@@ -63,6 +69,7 @@ Plugin 'preservim/nerdtree'
 Plugin 'yegappan/taglist'
 Plugin 'wesleyche/SrcExpl'
 Plugin 'sickill/vim-monokai'
+Plugin 'bogado/file-line'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
