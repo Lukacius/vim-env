@@ -36,6 +36,8 @@ hi filetype cterm=none ctermfg=233 ctermbg=244
 hi position cterm=none ctermfg=234 ctermbg=241 
 hi length cterm=none ctermfg=0 ctermbg=238 
 
+nnoremap K k 
+
 "set nocompatible              " be iMproved, required
 "filetype off                  " required
 
