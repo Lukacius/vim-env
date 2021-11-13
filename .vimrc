@@ -26,6 +26,8 @@ set showmatch
 set nobackup
 set noswapfile
 set autoread
+set viminfo='1000
+autocmd BufWritePre * %s/\s\+$//e
 
 set noerrorbells
 set clipboard=unnamed
@@ -37,6 +39,10 @@ hi position cterm=none ctermfg=234 ctermbg=241
 hi length cterm=none ctermfg=0 ctermbg=238 
 
 nnoremap K k 
+command Q q 
+command W w 
+command WQ wq 
+command Wq wq  
 
 "set nocompatible              " be iMproved, required
 "filetype off                  " required
@@ -89,10 +95,11 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " ctags
-set tags=./tags,./TAGS,tags;~,TAGS;~
+set tags=tags;
+set autochdir 
 
 " cscope
-set cscopetag
+"set cscopetag
 set csto=0
 
 if filereadable("cscope.out")
