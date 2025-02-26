@@ -127,7 +127,7 @@ set ut=100
 " NerdTree
 nmap <F10> :NERDTreeToggle<CR><CR>
 nmap <F11> :NERDTreeFind<CR><CR>
-let NERDTreeWinPos=1
+let g:NERDTreeWinPos = "right"
 
 " SrcExpl
 " // The switch of the Source Explorer 
